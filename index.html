@@ -11,15 +11,15 @@
             padding: 0;
             background-color: #1a1a1a;
             color: #eeeeee;
-            line-height: 1.6; /* 文字間隔の微調整（行間） */
+            line-height: 1.6;
         }
 
-        /* 🌸 ナビゲーションバーを最上部に完全固定 */
+        /* 🌸 ナビゲーションバー：画面最上部に固定 */
         .nav-bar {
             background-color: #000000;
             height: 35px;
             width: 100%;
-            position: fixed; /* 固定！ */
+            position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
@@ -33,7 +33,7 @@
         .nav-bar a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             padding: 0 15px;
             line-height: 35px;
             border-left: 1px solid #333;
@@ -52,19 +52,19 @@
 
         table {
             width: 100%;
-            border-collapse: collapse; /* 線を重ねる */
+            border-collapse: collapse;
             background-color: #2b2b2b;
             border-radius: 8px;
-            overflow: hidden; /* 角丸を効かせる */
-            letter-spacing: 0.05em; /* 文字の間隔を少し広げて読みやすく */
+            overflow: hidden;
+            letter-spacing: 0.05em;
         }
 
-        /* --- 🌸 見出しの固定設定 --- */
+        /* --- 🌸 見出しの固定設定（ナビバーのすぐ下） --- */
         th {
             background-color: #008eb6;
             color: white;
             position: sticky;
-            top: 35px; /* ナビバーの高さピッタリの位置に固定 */
+            top: 35px; /* ここがポイント！ナビバーの高さ分だけ下げる */
             z-index: 100;
             padding: 12px 15px;
             text-align: left;
@@ -72,28 +72,25 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* --- 🌸 エクセル風の薄い線 --- */
+        /* --- 🌸 エクセル風のデザイン --- */
         td {
             padding: 10px 15px;
             font-size: 0.9rem;
-            border: 1px solid rgba(255, 255, 255, 0.05); /* 凄く薄い線 */
+            border: 1px solid rgba(255, 255, 255, 0.05); /* 薄い格子線 */
         }
 
-        /* 一行おきに色を変える（エクセル風） */
         tbody tr:nth-child(even) {
-            background-color: #333333;
+            background-color: #333333; /* 縞々模様 */
         }
 
-        /* マウスを乗せた時に少し明るく */
         tbody tr:hover {
             background-color: #3a3a3a;
         }
 
         .key {
-            color: #00d4ff; /* 魔法の内容を少し強調 */
+            color: #00d4ff;
             font-weight: bold;
         }
-
     </style>
 </head>
 <body>
