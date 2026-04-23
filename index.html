@@ -14,7 +14,7 @@
             line-height: 1.6;
         }
 
-        /* 🌸 ナビゲーションバー：画面最上部に固定 */
+        /* 🌸 黒い固定バナー：中身が空でも表示されます */
         .nav-bar {
             background-color: #000000;
             height: 35px;
@@ -23,28 +23,16 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
             border-bottom: 2px solid #008eb6;
             box-sizing: border-box;
-        }
-
-        .nav-bar a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.8rem;
-            padding: 0 15px;
-            line-height: 35px;
-            border-left: 1px solid #333;
-            transition: color 0.3s;
         }
 
         /* --- コンテンツエリア --- */
         .container {
             max-width: 950px;
             margin: 0 auto;
-            padding-top: 55px; /* ナビバー(35px) + 余白(20px) */
+            /* 35px(バナー) + 20px(余白) = 55px */
+            padding-top: 55px; 
             padding-left: 20px;
             padding-right: 20px;
             padding-bottom: 40px;
@@ -59,12 +47,12 @@
             letter-spacing: 0.05em;
         }
 
-        /* --- 🌸 見出しの固定設定（ナビバーのすぐ下） --- */
+        /* --- 🌸 見出しの固定設定（バナーのすぐ下） --- */
         th {
             background-color: #008eb6;
             color: white;
             position: sticky;
-            top: 35px; /* ここがポイント！ナビバーの高さ分だけ下げる */
+            top: 35px; /* バナーの高さ分だけ下げる */
             z-index: 100;
             padding: 12px 15px;
             text-align: left;
@@ -72,15 +60,15 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* --- 🌸 エクセル風のデザイン --- */
+        /* --- 🌸 デザインの微調整 --- */
         td {
             padding: 10px 15px;
             font-size: 0.9rem;
-            border: 1px solid rgba(255, 255, 255, 0.05); /* 薄い格子線 */
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         tbody tr:nth-child(even) {
-            background-color: #333333; /* 縞々模様 */
+            background-color: #333333;
         }
 
         tbody tr:hover {
@@ -94,6 +82,8 @@
     </style>
 </head>
 <body>
+
+<div class="nav-bar"></div>
 
 <div class="container">
     <table>
