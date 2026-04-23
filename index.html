@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photoshop Manual Series</title>
+    <title>Main Shortcuts</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -13,95 +13,90 @@
             color: #eeeeee;
         }
 
-        /* --- ヘッダーエリア（バナー＋ナビをセットで固定） --- */
+        /* --- 🌸 ヘッダー全体を固定（ここが大事！） --- */
         .fixed-header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 9999; /* 重なり順を一番上に */
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
 
-        /* バナー本体 */
-        .banner {
-            width: 100%;
-            height: 180px;
-            background: url('top1.webp') center/cover no-repeat;
-            display: block;
+        /* タイトルバナー（高さ65px） */
+        .title-banner {
+            background-color: #000000;
+            height: 65px; 
+            box-sizing: border-box;
+            padding: 15px 20px;
+            border-bottom: 1px solid #333;
         }
 
-        /* 相互リンクバー（ナビゲーション） */
+        .title-banner h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #00a8ff;
+            border-left: 5px solid #008eb6;
+            padding-left: 15px;
+            line-height: 1.2;
+        }
+
+        /* ナビゲーションバー（高さ35px） */
         .nav-bar {
-            background-color: #000000; /* 真っ黒で引き締める */
+            background-color: #000000;
+            height: 35px;
+            box-sizing: border-box;
             display: flex;
-            justify-content: flex-end; /* 右寄せ（イメージ図通り） */
-            padding: 10px 20px;
-            border-bottom: 2px solid #008eb6; /* フォトショカラーのアクセント */
+            justify-content: flex-end;
+            padding: 0 10px;
+            align-items: center;
+            border-bottom: 2px solid #008eb6;
         }
 
         .nav-bar a {
             color: #ffffff;
             text-decoration: none;
             font-size: 0.9rem;
-            padding: 5px 15px;
-            border-right: 1px solid #444; /* 区切り線 */
-            transition: color 0.3s, background-color 0.3s;
+            padding: 0 15px;
+            line-height: 35px;
+            border-right: 1px solid #444;
+            transition: color 0.3s;
         }
 
-        .nav-bar a:last-child {
-            border-right: none;
-        }
+/* --- コンテンツエリア --- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    /* 🌸 100pxに設定。これで黒バナーの高さピッタリからテーブルが始まります */
+    padding-top: 96px; 
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+}
 
-        .nav-bar a:hover {
-            background-color: #333;
-            color: #00a8ff;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    /* 🌸 stickyを効かせるために overflow: hidden は外すのがベターです */
+}
 
-        /* --- コンテンツエリア（余白を多めに！） --- */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            /* バナー(180px) + ナビ(約45px) + 余裕分で250px確保 */
-            padding: 250px 20px 40px;
-        }
+/* --- 🌸 青いバー（見出し）の設定 --- */
+th {
+    background-color: #008eb6;
+    color: white;
+    position: sticky;
+    /* 🌸 ここを 100px に。これでスクロールした時に黒バナーの真下で止まります */
+    top: 96px; 
+    z-index: 100;
+    padding: 12px;
+    text-align: left;
+}
 
-        .title-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 5px;
-            border-left: 5px solid #008eb6;
-            padding: 5px 0 5px 15px;
-        }
-
-        .title-area h2 {
-            margin: 0;
-            font-size: 1.5rem;
-            line-height: 1.2;
-        }
-
-        /* --- テーブルデザイン（共通） --- */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #2b2b2b;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #3d3d3d;
-        }
-
-        th {
-            background-color: #008eb6;
-            color: white;
-        }
-
-        /* 画像用クラス（シェイプページで使用） */
+/* ❌ 注意：この下にあった、もう一つの「th { top: 0px; ... }」という記述は
+   必ず丸ごと削除するか、コメントアウトしてください！ ❌ */
         .preview-img {
             max-width: 300px;
             height: auto;
@@ -112,50 +107,114 @@
 <body>
 
     <div class="fixed-header">
-        <div class="banner"></div>
+        <div class="title-banner">
+            <h1>Main Shortcuts</h1>
+        </div>
         <nav class="nav-bar">
-            <a href="index.html">ショートカット</a>
-            <a href="shapes.html">シェイプ</a>
-            <a href="#">フォント</a>
+            <a href="https://kennew0922-lgtm.github.io/photoshopshortcuts-48-/">ショートカット</a>
+            <a href="https://kennew0922-lgtm.github.io/Listt_of_Photoshop_Shapes/">シェイプ</a>
+            <a href="https://kennew0922-lgtm.github.io/favorite_fonts/">フォント</a>
         </nav>
     </div>
 
-    <div class="container">
-        <div class="title-area">
-            <h2>A List of Fonts I Find Useful</h2>
-        </div>
-
-        <table>
-            <thead>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Shortcut keys</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td>新規レイヤー作成</td>
+                    <td><span class="key">F4</span>　 or 　<span class="key">F5</span>　 or 　<span class="key">Ctrl</span> + <span class="key">Shift</span> + <span class="key">N</span></td>
+                </tr>
                 <tr>
-                    <th style="width: 30%;">Shape Name</th>
-                    <th style="width: 70%;">Preview</th>
+                    <td>レイヤーを結合</td>
+                    <td><span class="key">F8</span>　 or 　<span class="key">F9</span></td>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
-                    <td>Noto Sans</td>
-                    <td><img src="font1.png" alt="吹き出し" class="preview-img"></td>
+                    <td>パスから選択範囲作成</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">F11</span></td>
                 </tr>
-                                <tr>
-                    <td>Noto Sans ip</td>
-                    <td><img src="font2.png" alt="吹き出し" class="preview-img"></td>
+                <tr>
+                    <td>パスから選択範囲作成＆塗りつぶし</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">F12</span></td>
                 </tr>
-                                <tr>
-                    <td>MSゴシック 標準</td>
-                    <td><img src="font3.png" alt="吹き出し" class="preview-img"></td>
+                <tr>
+                    <td>ブラシ選択</td>
+                    <td><span class="key">B</span></td>
                 </tr>
-                                <tr>
-                    <td>MS明朝 標準</td>
-                    <td><img src="font4.png" alt="吹き出し" class="preview-img"></td>
+                <tr>
+                    <td>消しゴム選択</td>
+                    <td><span class="key">D</span></td>
                 </tr>
-                                <tr>
-                    <td>Alex Brush</td>
-                    <td><img src="font5.png" alt="吹き出し" class="preview-img"></td>
+                <tr>
+                    <td>ペンツール選択</td>
+                    <td><span class="key">P</span></td>
                 </tr>
-                </tbody>
+                 <tr>
+                    <td>スポイトツール選択</td>
+                    <td><span class="key">S</span></td>
+                </tr>
+                 <tr>
+                    <td>ぼかしツール選択</td>
+                    <td><span class="key">E</span></td>
+                </tr>
+                <tr>
+                    <td>指先ツール選択</td>
+                    <td><span class="key">K</span></td>
+                </tr>
+                <tr>
+                    <td>グラデーションツール選択</td>
+                    <td><span class="key">G</span></td>
+                </tr>
+                <tr>
+                    <td>回転ビューツール選択</td>
+                    <td><span class="key">R</span></td>
+                </tr>
+                <tr>
+                    <td>手のひらツール選択</td>
+                    <td><span class="key">H</span></td>
+                </tr>
+                <tr>
+                    <td>シェイプツール選択</td>
+                    <td><span class="key">U</span></td>
+                </tr>
+                <tr>
+                    <td>自由変形</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">T</span></td>
+                </tr>
+                <tr>
+                    <td>ブラシサイズ変更</td>
+                    <td><span class="key">[</span> または <span class="key">]</span></td>
+                </tr>
+                <tr>
+                    <td>取り消し</td>
+                    <td><span class="key">Ctrl</span> + <span class="key">Z</span></td>
+                </tr>
+                <tr>
+                    <td>やり直し（前に戻る）</td>
+                    <td><span class="key">Shift</span> + <span class="key">Ctrl</span> +  <span class="key">Z</span></td>
+                </tr>
+                <tr>
+                　 <td>カット</td>
+                   <td><span class="key">Ctrl</span> + <span class="key">X</span></td>
+                </tr>
+                <tr>
+                　 <td>コピー</td>
+                   <td><span class="key">Ctrl</span> + <span class="key">C</span></td>
+                <tr>
+                　　<td>ペースト</td>
+                   <td><span class="key">Ctrl</span> + <span class="key">V</span></td>
+                </tr>
+            </tbody>
         </table>
     </div>
+    <br>
+<br>
+<br>
 
 </body>
 </html>
