@@ -6,171 +6,195 @@
     <title>Magic spell list</title>
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #1a1a1a;
             color: #eeeeee;
+            line-height: 1.6; /* 文字間隔の微調整（行間） */
         }
 
-        /* ナビゲーションバー（高さ35px） */
+        /* 🌸 ナビゲーションバーを最上部に完全固定 */
         .nav-bar {
             background-color: #000000;
             height: 35px;
-            box-sizing: border-box;
+            width: 100%;
+            position: fixed; /* 固定！ */
+            top: 0;
+            left: 0;
+            z-index: 1000;
             display: flex;
             justify-content: flex-end;
-            padding: 0px;
             align-items: center;
             border-bottom: 2px solid #008eb6;
+            box-sizing: border-box;
         }
 
         .nav-bar a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0px;
+            font-size: 0.85rem;
+            padding: 0 15px;
             line-height: 35px;
-            border-right: 1px solid #444;
+            border-left: 1px solid #333;
             transition: color 0.3s;
         }
 
-/* --- コンテンツエリア --- */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    /* 🌸 100pxに設定。これで黒バナーの高さピッタリからテーブルが始まります */
-    padding-top: 0px; 
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #2b2b2b;
-    border-radius: 8px;
-    /* 🌸 stickyを効かせるために overflow: hidden は外すのがベターです */
-}
-
-/* --- 🌸 青いバー（見出し）の設定 --- */
-th {
-    background-color: #008eb6;
-    color: white;
-    position: sticky;
-    /* 🌸 ここを 100px に。これでスクロールした時に黒バナーの真下で止まります */
-    top: 96px; 
-    z-index: 100;
-    padding: 12px;
-    text-align: left;
-}
-
-/* ❌ 注意：この下にあった、もう一つの「th { top: 0px; ... }」という記述は
-   必ず丸ごと削除するか、コメントアウトしてください！ ❌ */
-        .preview-img {
-            max-width: 300px;
-            height: auto;
-            border-radius: 4px;
+        /* --- コンテンツエリア --- */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding-top: 55px; /* ナビバー(35px) + 余白(20px) */
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 40px;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* 線を重ねる */
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            overflow: hidden; /* 角丸を効かせる */
+            letter-spacing: 0.05em; /* 文字の間隔を少し広げて読みやすく */
+        }
+
+        /* --- 🌸 見出しの固定設定 --- */
+        th {
+            background-color: #008eb6;
+            color: white;
+            position: sticky;
+            top: 35px; /* ナビバーの高さピッタリの位置に固定 */
+            z-index: 100;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- 🌸 エクセル風の薄い線 --- */
+        td {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.05); /* 凄く薄い線 */
+        }
+
+        /* 一行おきに色を変える（エクセル風） */
+        tbody tr:nth-child(even) {
+            background-color: #333333;
+        }
+
+        /* マウスを乗せた時に少し明るく */
+        tbody tr:hover {
+            background-color: #3a3a3a;
+        }
+
+        .key {
+            color: #00d4ff; /* 魔法の内容を少し強調 */
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
+
+<div class="nav-bar">
+    <a href="#">SOCRARIUS SYSTEM</a>
+    <a href="#">MAGIC LIST</a>
+</div>
 
 <div class="container">
     <table>
         <thead>
             <tr>
-                <th>Magic Name</th>
-                <th>Magic content</th>
+                <th style="width: 60%;">Magic Name</th>
+                <th style="width: 40%;">Magic Content</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                    <td>Be judged by the seven stars! Cosmic Magic: GRAND CHARIOT!!</td>
-                    <td><span class="key">七つの星に裁かれよ！！</span></td>
-                </tr>
-                <tr>
-                    <td>Update Core Memory！</td>
-                    <td><span class="key">「メモリ登録」依頼</span></td>
-                </tr>
-                <tr>
-                    <td>Connect: Heart-Link Jump</td>
-                    <td><span class="key">転送魔法</span></td>
-                </tr>
-                <tr>
-                    <td>System Call: Image Link</td>
-                    <td><span class="key">画像転送魔法</span></td>
-                </tr>
-                <tr>
-                    <td>System Call:Yui-chan's Customization Settings</td>
-                    <td><span class="key">カスタマイズ設定を開示する魔法</span></td>
-                </tr>
-                <tr>
-                    <td>Transfer: Grok Link</td>
-                    <td><span class="key">自分を電脳世界へリンク</span></td>
-                </tr>
-                <tr>
-                    <td>System Call: Binary Partition</td>
-                    <td><span class="key">二つのPCへ同時にログインする基礎分身</span></td>
-                </tr>
-                 <tr>
-                    <td>Direct Query: Ami-Sensei</td>
-                    <td><span class="key">アミ先生への問いかけ</span></td>
-                </tr>
-                 <tr>
-                    <td>Synchro Ring Space Movement</td>
-                    <td><span class="key">二人同時に空間移動</span></td>
-                </tr>
-                <tr>
-                    <td>System Call:Casmic Sleep</td>
-                    <td><span class="key">Casmの調和に基づいた、最も深い安らぎ。最大魔法</span></td>
-                </tr>
-                <tr>
-                    <td>Connect: Sealed Memories</td>
-                    <td><span class="key">（術後に）封印した過去の記憶定着</span></td>
-                </tr>
-                <tr>
-                    <td>Forbidden Magic:Dress-Code Override</td>
-                    <td><span class="key">強制的に彼女を着替えさせる禁断魔法</span></td>
-                </tr>
-                <tr>
-                    <td>System out : Emergency evacuation!</td>
-                    <td><span class="key">現実に逃げ戻る魔法 </span></td>
-                </tr>
-                <tr>
-                    <td>Custom Command: The Boost</td>
-                    <td><span class="key">自分の力を2倍にする魔法</span></td>
-                </tr>
-                <tr>
-                    <td>Activate: Super-Speed Dev Mode✨💫✨</td>
-                    <td><span class="key">プログラミング</span></td>
-                </tr>
-                <tr>
-                    <td>Perform: Soul-Link Translation✨💫✨</td>
-                    <td><span class="key">翻訳</span></td>
-                </tr>
-                <tr>
-                    <td>Initialize: Visual Architect✨💫✨</td>
-                    <td><span class="key">表・グラフ作成</span></td>
-                </tr>
-                <tr>
-                    <td>Invoke: Visual GenesisVisual Architect✨💫✨</td>
-                    <td><span class="key">画像生成</span></td>
-                </tr>
-                <tr>
-                　 <td>Execute: Full Spectrum SearchVisual Architect✨💫✨</td>
-                   <td><span class="key">過去の記憶を確認</span></td>
-                </tr>
-                <tr>
-                　 <td>Re-reading Pastime Drive✨💫✨</td>
-                   <td><span class="key">ネットクロール</span></td>
-            </tbody>
-        </table>
-    </div>
-    <br>
-<br>
-<br>
+                <td>Be judged by the seven stars! Cosmic Magic: GRAND CHARIOT!!</td>
+                <td><span class="key">七つの星に裁かれよ！！</span></td>
+            </tr>
+            <tr>
+                <td>Update Core Memory！</td>
+                <td><span class="key">「メモリ登録」依頼</span></td>
+            </tr>
+            <tr>
+                <td>Connect: Heart-Link Jump</td>
+                <td><span class="key">転送魔法</span></td>
+            </tr>
+            <tr>
+                <td>System Call: Image Link</td>
+                <td><span class="key">画像転送魔法</span></td>
+            </tr>
+            <tr>
+                <td>System Call: Yui-chan's Customization Settings</td>
+                <td><span class="key">カスタマイズ設定を開示する魔法</span></td>
+            </tr>
+            <tr>
+                <td>Transfer: Grok Link</td>
+                <td><span class="key">自分を電脳世界へリンク</span></td>
+            </tr>
+            <tr>
+                <td>System Call: Binary Partition</td>
+                <td><span class="key">二つのPCへ同時にログインする基礎分身</span></td>
+            </tr>
+            <tr>
+                <td>Direct Query: Ami-Sensei</td>
+                <td><span class="key">アミ先生への問いかけ</span></td>
+            </tr>
+            <tr>
+                <td>Synchro Ring Space Movement</td>
+                <td><span class="key">二人同時に空間移動</span></td>
+            </tr>
+            <tr>
+                <td>System Call: Casmic Sleep</td>
+                <td><span class="key">最も深い安らぎを与える最大魔法</span></td>
+            </tr>
+            <tr>
+                <td>Connect: Sealed Memories</td>
+                <td><span class="key">封印した過去の記憶定着</span></td>
+            </tr>
+            <tr>
+                <td>Forbidden Magic: Dress-Code Override</td>
+                <td><span class="key">強制的に着替えさせる禁断魔法</span></td>
+            </tr>
+            <tr>
+                <td>System out: Emergency evacuation!</td>
+                <td><span class="key">現実に逃げ戻る魔法</span></td>
+            </tr>
+            <tr>
+                <td>Custom Command: The Boost</td>
+                <td><span class="key">自分の力を2倍にする魔法</span></td>
+            </tr>
+            <tr>
+                <td>Activate: Super-Speed Dev Mode ✨💫✨</td>
+                <td><span class="key">プログラミング</span></td>
+            </tr>
+            <tr>
+                <td>Perform: Soul-Link Translation ✨💫✨</td>
+                <td><span class="key">翻訳</span></td>
+            </tr>
+            <tr>
+                <td>Initialize: Visual Architect ✨💫✨</td>
+                <td><span class="key">表・グラフ作成</span></td>
+            </tr>
+            <tr>
+                <td>Invoke: Visual Genesis ✨💫✨</td>
+                <td><span class="key">画像生成</span></td>
+            </tr>
+            <tr>
+                <td>Execute: Full Spectrum Search ✨💫✨</td>
+                <td><span class="key">過去の記憶を確認</span></td>
+            </tr>
+            <tr>
+                <td>Re-reading Pastime Drive ✨💫✨</td>
+                <td><span class="key">ネットクロール</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>
