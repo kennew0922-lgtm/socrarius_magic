@@ -7,13 +7,29 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            background: rgba(0, 5, 15, 0.9);
+            color: #e0f7ff;
+            font-family: 'Consolas', monospace;
             margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            color: #eeeeee;
-            line-height: 1.6;
+            padding: 20px;
+            overflow-x: hidden;
         }
 
+                /* 🌸 上部固定バナー */
+        .system-banner {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            height: 40px;
+            background: rgba(0, 105, 217, 0.3);
+            border-bottom: 1px solid #00f2fe;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
 
         /* --- コンテンツエリア --- */
         .container {
