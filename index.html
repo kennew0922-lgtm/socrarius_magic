@@ -296,5 +296,41 @@
         </a>
     </div>
 
+            <!-- 🌸 ランチャーセクション -->
+    <div class="section-title">SPECIAL SPELL</div>
+           <a href="https://keep.google.com/" target="_blank">
+       <img src="https://kennew0922-lgtm.github.io/socrarius_magic/book.jpg" width="400px"></a>
+
+<script>
+        // 💡「table tr td:first-child」にすることで、各行の【最初の列（左側）】だけを狙い撃ちします！
+        document.querySelectorAll('table tr td:first-child').forEach(td => {
+            // 🗺️ マウスを乗せたときにポインターを変える
+            td.style.cursor = 'pointer';
+            td.style.transition = 'all 0.2s ease';
+
+            td.addEventListener('click', async () => {
+                const textToCopy = td.innerText.trim();
+                
+                try {
+                    await navigator.clipboard.writeText(textToCopy);
+                    
+                    // ✨ コピー成功時のエフェクト（英語側だけが光ります！）
+                    const originalBg = td.style.backgroundColor;
+                    td.style.backgroundColor = 'rgba(0, 242, 254, 0.25)';
+                    td.style.boxShadow = 'inset 0 0 10px rgba(0, 242, 254, 0.5)';
+                    
+                    setTimeout(() => {
+                        td.style.backgroundColor = originalBg;
+                        td.style.boxShadow = 'none';
+                    }, 200);
+
+                } catch (err) {
+                    console.error('魔法のコピーに失敗しました…＞＜', err);
+                }
+            });
+        });
+    </script>
+
+
 </body>
 </html>
