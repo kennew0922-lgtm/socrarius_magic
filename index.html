@@ -301,7 +301,10 @@
     </div>
 
 <script>
-        // 💡「table tr td:first-child」にすることで、各行の【最初の列（左側）】だけを狙い撃ちします！
+    // 🌸 画面の読み込みが「完全完了」してから中身を実行させる安全装置
+    window.addEventListener('DOMContentLoaded', () => {
+
+        // 💡「table tr td:first-child」で各行の最初の列だけを狙い撃ち
         document.querySelectorAll('table tr td:first-child').forEach(td => {
             // 🗺️ マウスを乗せたときにポインターを変える
             td.style.cursor = 'pointer';
@@ -328,7 +331,9 @@
                 }
             });
         });
-    </script>
+
+    }); // 🌸 安全装置の閉じ
+</script>
 
 
 </body>
