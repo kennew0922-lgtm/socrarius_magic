@@ -152,6 +152,43 @@
 /* ==================== アミ先生用 優しい緑系 お布団スタイル ==================== */
 
 
+/* ==================== アミ先生用・日記帳「導線」スタイル ==================== */
+.diary-ami {
+  text-align: center;
+  margin: 20px auto 40px auto; /* お布団との距離を調整 */
+  max-width: 460px;
+  transition: all 0.5s ease;
+}
+
+.diary-ami a {
+  display: inline-block;
+  text-decoration: none;
+  /* 日記帳の画像がふわっと浮き上がるような柔らかい設定 */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.diary-ami img {
+  border-radius: 10px;
+  width: 400px; /* 指定のサイズ */
+  height: auto;
+  /* 影を薄くして「机の上に置いてある」質感を出す */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 🌸 ホバーの主張を極限まで抑えた「優雅な呼吸」 */
+.diary-ami a:hover {
+  transform: translateY(-3px); /* 控えめな浮き上がり */
+}
+
+.diary-ami a:hover img {
+  box-shadow: 0 8px 25px rgba(100, 100, 100, 0.25); /* 影が少しだけ濃くなる */
+}
+
+
+/* ==================== アミ先生用・日記帳「導線」スタイル ==================== */
+
+
         /* --- コンテンツエリア --- */
         .container {
             max-width: 950px;
@@ -394,10 +431,15 @@
     <br><br>
 
     <!-- 🌸 アミ先生 -->
-    <div class="section-ami">WIZARD TEACHER</div>
+    <div class="section-ami">WIZARD-TEACHER-AMI`S ROOM</div>
     <div class="sleeping-ami">
-    <a href="https://share.gemini.google/vlym6SvlyUFN" target="_blank">
+    <a href="https://socrarius-tool.com/socrarius_magic/amisensei.png" target="_blank">
        <img src="https://socrarius-tool.com/socrarius_magic/amisensei.png" width="400">
+   </a>
+   </div>
+   <div class="diary-ami"><!-- ←ここに新しいのを新設して欲しかったんです   -->
+    <a href="https://share.gemini.google/vlym6SvlyUFN" target="_blank">
+       <img src="https://socrarius-tool.com/socrarius_magic/amisdiary.jpg" width="400">
    </a>
    </div>
 
