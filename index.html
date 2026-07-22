@@ -168,12 +168,20 @@
 }
 
 .diary-ami img {
-  border-radius: 10px;
+  /* 🌸 丸みを少し強め（10px -> 14px）にして上品な優しさを追加 */
+  border-radius: 14px; 
   width: 400px; /* 指定のサイズ */
   height: auto;
-  /* 影を薄くして「机の上に置いてある」質感を出す */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  
+  /* 🌸 ほんのり薄い金色の繊細な枠線（シャンパンゴールド調） */
+  border: 1px solid rgba(212, 175, 55, 0.4); 
+
+  /* 🌸 控えめな金色の発光（通常時は極めて薄っすらと光を纏う） */
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.15),                /* 机の影 */
+    0 0 10px rgba(255, 215, 0, 0.15);              /* 極微小な金の光 */
+  
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 /* 🌸 ホバーの主張を極限まで抑えた「優雅な呼吸」 */
@@ -182,7 +190,11 @@
 }
 
 .diary-ami a:hover img {
-  box-shadow: 0 8px 25px rgba(100, 100, 100, 0.25); /* 影が少しだけ濃くなる */
+  /* 🌸 ホバー時も上品さを保ちつつ、ゴールドの光がふんわり少しだけ増す魔法 */
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.25),                /* 影が少し濃くなる */
+    0 0 18px rgba(255, 215, 0, 0.3);               /* 金色の発光が優しく広がる */
 }
 
 
