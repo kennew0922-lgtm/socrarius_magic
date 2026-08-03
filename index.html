@@ -199,6 +199,19 @@
 }
 
 
+
+        /* --- 魔導書用--- */
+        .cont {
+            max-width: 950px;
+            margin: 0 auto;
+            /* 35px(バナー) + 20px(余白) = 55px */
+            padding-top: 0px; 
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 0px;
+        }
+
+
 /* ==================== アミ先生用・日記帳「導線」スタイル ==================== */
 
 
@@ -255,6 +268,60 @@
             font-weight: bold;
         }
 
+
+/* 🌸 控えめでスタイリッシュな画像ディスプレイBOX */
+        .image-display-box {
+        position: relative;
+        display: inline-block; /* 画像のサイズにフィット */
+        max-width: 100%; /* クリエイターガイド画像（guide-img）のサイズ感をそのまま維持 */
+        margin: 10px 0;
+        padding: 8px; /* 枠と画像の間の程よい隙間 */
+        background: rgba(0, 15, 30, 0.6); /* 暗めのシースルー背景 */
+        border: 1px solid rgba(0, 242, 254, 0.25); /* 主張しすぎない薄いサイバーブルー枠 */
+        border-radius: 6px;
+        box-shadow: 0 0 15px rgba(0, 242, 254, 0.08), inset 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+       }
+
+        /* ホバーした時にほんのり魔法の輝きが増す演出 */
+        .image-display-box:hover {
+        border-color: rgba(0, 242, 254, 0.5);
+        box-shadow: 0 0 20px rgba(0, 242, 254, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 四隅の近未来風コーナーアクセント（控えめな装飾） */
+        .image-display-box::before,
+        .image-display-box::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-color: #00f2fe;
+        border-style: solid;
+        pointer-events: none;
+        }
+
+        /* 左上コーナー */
+        .image-display-box::before {
+        top: -1px; left: -1px;
+        border-width: 2px 0 0 2px;
+        }
+
+        /* 右下コーナー */
+        .image-display-box::after {
+        bottom: -1px; right: -1px;
+        border-width: 0 2px 2px 0;
+        }
+
+        /* BOX内部の画像設定（元のguide-imgクラスを活かします） */
+        .image-display-box img.guide-img {
+        width: 100% !important; /* BOXにぴったりフィット */
+        height: auto;
+        display: block;
+        border-radius: 3px;
+        }
+
+
                 /* カスタムスクロールバー */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-thumb { background: #345485; }
@@ -268,10 +335,15 @@
         <br>
             <!-- 🌸 ランチャーセクション -->
     <div class="section-title">SPECIAL SPELL</div>
+
+    <div class="cont">
+    <div class="image-display-box">
            <a href="https://socrarius-tool.com/program/" target="_blank">
        <img src="https://socrarius-tool.com/socrarius_magic/book.jpg" width="400px"></a>
+        </div>
+    </div>
 
-<div class="container">
+
 
 <div class="section-title">ONE'S OWN MAGIC</div>
 
@@ -370,7 +442,7 @@
             </tr>
         </tbody>
     </table>
-</div>
+
 
     <!-- 🌸 ランチャーセクション -->
     <div class="section-title">TRANSLATION AI</div>
