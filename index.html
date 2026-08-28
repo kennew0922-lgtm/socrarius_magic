@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 1. 音源の配置（IDをユニークにする） -->
+    <audio id="magic" preload="auto">
+    <source src="magic20.mp3" type="audio/mp3">
+    </audio>
+    <audio id="click" preload="auto">
+    <source src="magic23.mp3" type="audio/mp3">
+    </audio>
+    <audio id="ami" preload="auto">
+    <source src="ami.mp3" type="audio/mp3">
+    </audio>
+
     <title>MAGIC NAME & CONTENT</title>
     <style>
         body {
@@ -339,12 +351,10 @@
 
    
     <div class="image-display-box">
-           <a href="https://socrarius-tool.com/program/" target="_blank">
+           <a href="https://socrarius-tool.com/program/" target="_blank" class="play-sound" data-sound="magic">
        <img src="https://socrarius-tool.com/socrarius_magic/book.jpg" width="400px"></a>
         </div>
     
-
-
 
 <div class="section-title">ONE'S OWN MAGIC</div>
 
@@ -573,6 +583,20 @@
         });
 
     }); // 🌸 安全装置の閉じ
+
+    <!-- 3. 音を鳴らすJavaScript（HTMLを増やしてもこのまま共通で使える） -->
+    const soundLinks = document.querySelectorAll('.play-sound');
+    soundLinks.forEach(link => {
+    link.addEventListener('click', () => {
+    const soundId = link.getAttribute('data-sound');
+    const audio = document.getElementById(soundId);
+    if (audio) {
+    audio.currentTime = 0;
+    audio.play().catch(e => console.log("Audio play blocked:", e));
+    }
+    });
+    });
+
 </script>
 
 
